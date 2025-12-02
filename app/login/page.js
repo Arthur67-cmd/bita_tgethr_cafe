@@ -35,21 +35,34 @@ function LoginForm() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-6" style={{ 
+    <div className="min-h-screen flex items-center justify-center p-6" style={{
       background: 'linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 50%, var(--secondary) 100%)'
     }}>
-      <div className="card animate-fade-in" style={{ 
+      <div className="card animate-fade-in" style={{
         maxWidth: '480px',
         width: '100%'
       }}>
         {/* Logo */}
         <div className="text-center mb-8">
-          <div className="text-6xl mb-4">☕</div>
+          <div className="text-6xl mb-4">
+            <img
+              src="/logo.png"
+              alt="BITA_TGETHR logo"
+              loading="lazy"
+              style={{
+                width: 64,
+                height: 64,
+                objectFit: 'cover',
+                borderRadius: 10,
+                flexShrink: 0
+              }}
+            />
+          </div>
           <h1 className="text-3xl font-bold text-gradient mb-2">
             Welcome Back
           </h1>
           <p style={{ color: 'var(--text-secondary)' }}>
-            Sign in to continue to Bita_Tgethr
+            Let's get Bita_Tgethr
           </p>
         </div>
 
@@ -85,7 +98,7 @@ function LoginForm() {
           </div>
 
           {error && (
-            <div className="p-4 rounded-xl animate-slide-in" style={{ 
+            <div className="p-4 rounded-xl animate-slide-in" style={{
               background: 'rgba(255, 61, 0, 0.1)',
               border: '2px solid var(--error)',
               color: 'var(--error)'
@@ -117,8 +130,8 @@ function LoginForm() {
         <div className="mt-6 text-center">
           <p style={{ color: 'var(--text-secondary)' }}>
             Don't have an account?{' '}
-            <Link 
-              href="/register" 
+            <Link
+              href="/register"
               className="font-bold text-gradient hover:underline"
             >
               Register Now
@@ -126,33 +139,7 @@ function LoginForm() {
           </p>
         </div>
 
-        {/* Demo Accounts */}
-        <div className="mt-8 p-4 rounded-xl" style={{ 
-          background: 'var(--bg-main)',
-          border: '2px dashed var(--border)'
-        }}>
-          <p className="font-bold mb-3" style={{ color: 'var(--text-primary)' }}>
-            🎯 Demo Accounts
-          </p>
-          <div className="space-y-2 text-sm">
-            <div className="flex justify-between">
-              <span style={{ color: 'var(--text-secondary)' }}>👤 Customer:</span>
-              <code className="font-mono">customer@cafe.com</code>
-            </div>
-            <div className="flex justify-between">
-              <span style={{ color: 'var(--text-secondary)' }}>👨‍🍳 Staff:</span>
-              <code className="font-mono">staff@cafe.com</code>
-            </div>
-            <div className="flex justify-between">
-              <span style={{ color: 'var(--text-secondary)' }}>👔 Owner:</span>
-              <code className="font-mono">owner@cafe.com</code>
-            </div>
-            <div className="mt-2 pt-2" style={{ borderTop: '1px solid var(--border)' }}>
-              <span style={{ color: 'var(--text-muted)' }}>Password: </span>
-              <code className="font-mono font-bold">password123</code>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
   );

@@ -56,24 +56,46 @@ export default function OrdersPage() {
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-2xl font-bold text-gradient flex items-center gap-2">
-                📦 My Orders
+                <img
+                  src="/logo.png"
+                  alt="BITA_TGETHR logo"
+                  loading="lazy"
+                  style={{
+                    width: 64,
+                    height: 64,
+                    objectFit: 'cover',
+                    borderRadius: 10,
+                    flexShrink: 0
+                  }}
+                /> My Orders
               </h1>
               <p className="text-sm mt-1" style={{ color: 'var(--text-secondary)' }}>
-                {session?.user?.name || 'Guest'} • Track your orders in real-time
+                {session?.user?.name || 'Guest'} • Track your orders here
               </p>
             </div>
             <div className="flex gap-3">
               {session?.user?.loyaltyPoints > 0 && (
                 <div className="badge badge-warning">
-                  ★ {session.user.loyaltyPoints} Points
+                  ★ {session.user.loyaltyPoints} Pts
                 </div>
               )}
               <button onClick={() => router.push('/menu')} className="btn btn-primary">
-                ☕ Menu
+                <img
+                  src="/logo.png"
+                  alt="BITA_TGETHR logo"
+                  loading="lazy"
+                  style={{
+                    width: 30,
+                    height: 30,
+                    objectFit: 'cover',
+                    borderRadius: 10,
+                    flexShrink: 0
+                  }}
+                /> Menu
               </button>
               {session && (
                 <button onClick={() => signOut()} className="btn btn-ghost">
-                  🚪 Logout
+                   Logout
                 </button>
               )}
             </div>

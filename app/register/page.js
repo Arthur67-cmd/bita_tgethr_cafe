@@ -63,21 +63,34 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-6" style={{ 
+    <div className="min-h-screen flex items-center justify-center p-6" style={{
       background: 'linear-gradient(135deg, var(--secondary) 0%, var(--primary) 50%, var(--info) 100%)'
     }}>
-      <div className="card animate-fade-in" style={{ 
+      <div className="card animate-fade-in" style={{
         maxWidth: '520px',
         width: '100%'
       }}>
         {/* Logo */}
         <div className="text-center mb-8">
-          <div className="text-6xl mb-4">☕</div>
+          <div className="text-6xl mb-4">
+            <img
+              src="/logo.png"
+              alt="BITA_TGETHR logo"
+              loading="lazy"
+              style={{
+                width: 64,
+                height: 64,
+                objectFit: 'cover',
+                borderRadius: 10,
+                flexShrink: 0
+              }}
+            />
+          </div>
           <h1 className="text-3xl font-bold text-gradient mb-2">
             Create Account
           </h1>
           <p style={{ color: 'var(--text-secondary)' }}>
-            Join Bita_Tgethr Cafe today
+            Join us to get Bita_Tgethr!
           </p>
         </div>
 
@@ -161,7 +174,7 @@ export default function RegisterPage() {
           </div>
 
           {error && (
-            <div className="p-4 rounded-xl animate-slide-in" style={{ 
+            <div className="p-4 rounded-xl animate-slide-in" style={{
               background: 'rgba(255, 61, 0, 0.1)',
               border: '2px solid var(--error)',
               color: 'var(--error)'
@@ -193,8 +206,8 @@ export default function RegisterPage() {
         <div className="mt-6 text-center">
           <p style={{ color: 'var(--text-secondary)' }}>
             Already have an account?{' '}
-            <Link 
-              href="/login" 
+            <Link
+              href="/login"
               className="font-bold text-gradient hover:underline"
             >
               Sign In
