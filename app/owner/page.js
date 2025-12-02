@@ -14,7 +14,7 @@ export default function OwnerDashboard() {
 
   useEffect(() => {
     if (status === "loading") return;
-    
+
     if (!session) {
       router.push("/login?callbackUrl=/owner");
       return;
@@ -37,12 +37,12 @@ export default function OwnerDashboard() {
         fetch('/api/stats'),
         fetch('/api/menu')
       ]);
-      
+
       if (statsRes.ok) {
         const statsData = await statsRes.json();
         setStats(statsData);
       }
-      
+
       if (menuRes.ok) {
         const menuData = await menuRes.json();
         setMenuItems(menuData);
@@ -56,7 +56,7 @@ export default function OwnerDashboard() {
 
   async function updateMenuPrice(itemId) {
     if (!editPrice) return;
-    
+
     try {
       const item = menuItems.find(i => i.id === itemId);
       const res = await fetch(`/api/menu/${itemId}`, {
@@ -97,13 +97,13 @@ export default function OwnerDashboard() {
   }
 
   const avgOrderValue = stats?.orderCount > 0 && stats?.totalSales
-  ? (parseFloat(stats.totalSales) / stats.orderCount).toFixed(2) 
-  : '0.00';
+    ? (parseFloat(stats.totalSales) / stats.orderCount).toFixed(2)
+    : '0.00';
 
   return (
     <div className="min-h-screen" style={{ background: 'var(--bg-main)' }}>
       {/* Header */}
-      <header className="sticky top-0 z-50 glass" style={{ 
+      <header className="sticky top-0 z-50 glass" style={{
         borderBottom: '1px solid var(--border)'
       }}>
         <div className="max-w-7xl mx-auto px-6 py-4">
@@ -133,70 +133,70 @@ export default function OwnerDashboard() {
 
       <div className="max-w-7xl mx-auto px-6 py-8">
         {/* Stats Cards */}
-<div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-  <div className="card card-hover animate-fade-in" style={{ 
-    background: 'linear-gradient(135deg, #2196F3 0%, #1976D2 100%)',
-    color: 'white',
-    border: 'none'
-  }}>
-    <div className="flex items-center gap-4">
-      <div className="text-6xl">💰</div>
-      <div className="flex-1">
-        <div className="text-4xl font-bold mb-1">
-          ${stats?.totalSales ? parseFloat(stats.totalSales).toFixed(2) : '0.00'}
-        </div>
-        <div className="text-sm opacity-90">Total Sales</div>
-        <div className="mt-2 px-3 py-1 rounded-full inline-block" style={{ 
-          background: 'rgba(255,255,255,0.2)'
-        }}>
-          +12.5% vs last week
-        </div>
-      </div>
-    </div>
-  </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="card card-hover animate-fade-in" style={{
+            background: 'linear-gradient(135deg, #2196F3 0%, #1976D2 100%)',
+            color: 'white',
+            border: 'none'
+          }}>
+            <div className="flex items-center gap-4">
+              <div className="text-6xl">💰</div>
+              <div className="flex-1">
+                <div className="text-4xl font-bold mb-1">
+                  ${stats?.totalSales ? parseFloat(stats.totalSales).toFixed(2) : '0.00'}
+                </div>
+                <div className="text-sm opacity-90">Total Sales</div>
+                <div className="mt-2 px-3 py-1 rounded-full inline-block" style={{
+                  background: 'rgba(255,255,255,0.2)'
+                }}>
+                  +12.5% vs last week
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <div className="card card-hover animate-fade-in" style={{ 
-    background: 'linear-gradient(135deg, #4CAF50 0%, #388E3C 100%)',
-    color: 'white',
-    border: 'none'
-  }}>
-    <div className="flex items-center gap-4">
-      <div className="text-6xl">📦</div>
-      <div className="flex-1">
-        <div className="text-4xl font-bold mb-1">
-          {stats?.orderCount || 0}
-        </div>
-        <div className="text-sm opacity-90">Completed Orders</div>
-        <div className="mt-2 px-3 py-1 rounded-full inline-block" style={{ 
-          background: 'rgba(255,255,255,0.2)'
-        }}>
-          {Math.floor((stats?.orderCount || 0) / 7)} per day avg
-        </div>
-      </div>
-    </div>
-  </div>
+          <div className="card card-hover animate-fade-in" style={{
+            background: 'linear-gradient(135deg, #4CAF50 0%, #388E3C 100%)',
+            color: 'white',
+            border: 'none'
+          }}>
+            <div className="flex items-center gap-4">
+              <div className="text-6xl">📦</div>
+              <div className="flex-1">
+                <div className="text-4xl font-bold mb-1">
+                  {stats?.orderCount || 0}
+                </div>
+                <div className="text-sm opacity-90">Completed Orders</div>
+                <div className="mt-2 px-3 py-1 rounded-full inline-block" style={{
+                  background: 'rgba(255,255,255,0.2)'
+                }}>
+                  {Math.floor((stats?.orderCount || 0) / 7)} per day avg
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <div className="card card-hover animate-fade-in" style={{ 
-    background: 'linear-gradient(135deg, #FF9800 0%, #F57C00 100%)',
-    color: 'white',
-    border: 'none'
-  }}>
-    <div className="flex items-center gap-4">
-      <div className="text-6xl">📊</div>
-      <div className="flex-1">
-        <div className="text-4xl font-bold mb-1">
-          ${avgOrderValue}
+          <div className="card card-hover animate-fade-in" style={{
+            background: 'linear-gradient(135deg, #FF9800 0%, #F57C00 100%)',
+            color: 'white',
+            border: 'none'
+          }}>
+            <div className="flex items-center gap-4">
+              <div className="text-6xl">📊</div>
+              <div className="flex-1">
+                <div className="text-4xl font-bold mb-1">
+                  ${avgOrderValue}
+                </div>
+                <div className="text-sm opacity-90">Avg Order Value</div>
+                <div className="mt-2 px-3 py-1 rounded-full inline-block" style={{
+                  background: 'rgba(255,255,255,0.2)'
+                }}>
+                  Target: $15.00
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="text-sm opacity-90">Avg Order Value</div>
-        <div className="mt-2 px-3 py-1 rounded-full inline-block" style={{ 
-          background: 'rgba(255,255,255,0.2)'
-        }}>
-          Target: $15.00
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
         {/* Popular Items */}
         <div className="card mb-8 animate-fade-in">
@@ -209,16 +209,16 @@ export default function OwnerDashboard() {
               Top {stats?.popularItems.length || 0} Sellers
             </div>
           </div>
-          
+
           {stats?.popularItems.length > 0 ? (
             <div className="space-y-4">
               {stats.popularItems.map((item, idx) => (
-                <div key={idx} className="card-hover p-4 rounded-xl" style={{ 
+                <div key={idx} className="card-hover p-4 rounded-xl" style={{
                   background: 'var(--bg-main)',
                   border: '2px solid var(--border)'
                 }}>
                   <div className="flex items-center gap-4">
-                    <div className="text-4xl font-bold" style={{ 
+                    <div className="text-4xl font-bold" style={{
                       color: idx === 0 ? '#FFD700' : idx === 1 ? '#C0C0C0' : idx === 2 ? '#CD7F32' : 'var(--text-muted)',
                       minWidth: '50px'
                     }}>
@@ -244,13 +244,13 @@ export default function OwnerDashboard() {
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Progress Bar */}
                   <div className="mt-3">
                     <div className="h-2 rounded-full" style={{ background: 'var(--border)' }}>
-                      <div 
+                      <div
                         className="h-2 rounded-full"
-                        style={{ 
+                        style={{
                           background: 'linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%)',
                           width: `${Math.min((item.sold / (stats?.popularItems[0]?.sold || 1)) * 100, 100)}%`,
                           transition: 'width 0.5s ease'
@@ -280,11 +280,11 @@ export default function OwnerDashboard() {
               {menuItems.length} Items
             </div>
           </div>
-          
+
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr style={{ 
+                <tr style={{
                   background: 'var(--bg-main)',
                   borderBottom: '2px solid var(--border)'
                 }}>
@@ -297,12 +297,23 @@ export default function OwnerDashboard() {
               </thead>
               <tbody>
                 {menuItems.map(item => (
-                  <tr key={item.id} className="card-hover" style={{ 
+                  <tr key={item.id} className="card-hover" style={{
                     borderBottom: '1px solid var(--border)'
                   }}>
                     <td className="p-4">
                       <div className="flex items-center gap-3">
-                        <div className="text-3xl">{item.image_url}</div>
+                        <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center">
+                          <img
+                            src={item.image_url}
+                            alt={item.name}
+                            style={{
+                              width: '48px',
+                              height: '48px',
+                              objectFit: 'contain',
+                              borderRadius: '9999px'
+                            }}
+                          />
+                        </div>
                         <div>
                           <div className="font-bold">{item.name}</div>
                           <div className="text-sm" style={{ color: 'var(--text-secondary)' }}>
@@ -310,6 +321,7 @@ export default function OwnerDashboard() {
                           </div>
                         </div>
                       </div>
+
                     </td>
                     <td className="p-4">
                       <span className="badge badge-info">
