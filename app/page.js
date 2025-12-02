@@ -11,13 +11,13 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen relative overflow-hidden bg-[#0A3F2F]">
       
-      {/* Background Ambience */}
+
       <div className="absolute top-[-20%] left-[-10%] w-[50vw] h-[50vw] bg-[#145E48] rounded-full blur-[100px] opacity-40 animate-pulse-slow"></div>
       <div className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] bg-[#34D399] rounded-full blur-[120px] opacity-10 animate-float"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 h-screen flex flex-col">
         
-        {/* Navbar */}
+
         <nav className={`flex justify-between items-center py-8 transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
           
           <div className="flex gap-6 text-sm font-medium text-white/80">
@@ -26,7 +26,7 @@ export default function LandingPage() {
           </div>
         </nav>
 
-        {/* Hero Content */}
+
         <main className="flex-1 flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24">
           
           <div className={`flex-1 text-center md:text-left transition-all duration-1000 delay-300 ${loaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>

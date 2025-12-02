@@ -70,7 +70,7 @@ export default function RegisterPage() {
         maxWidth: '520px',
         width: '100%'
       }}>
-        {/* Logo */}
+
         <div className="text-center mb-8">
           <div className="text-6xl mb-4">
             <img

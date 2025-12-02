@@ -5,33 +5,33 @@ export default function CheckoutModal({ isOpen, onClose, total, onConfirm }) {
   const [method, setMethod] = useState('card');
   const [processing, setProcessing] = useState(false);
   
-  // Clean card state
+
   const [cardData, setCardData] = useState({ number: '', expiry: '', cvc: '' });
 
   if (!isOpen) return null;
 
   async function handlePayment() {
     setProcessing(true);
-    // Simulate 2 second loading
+
     await new Promise(resolve => setTimeout(resolve, 2000));
     
-    // Send back to parent
+
     await onConfirm({ method, ...cardData });
     setProcessing(false);
   }
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-      {/* Dark Backdrop */}
+
       <div 
         className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
         onClick={onClose}
       ></div>
 
-      {/* Modal Content */}
+
       <div className="bg-white w-full max-w-md rounded-[1.5rem] shadow-2xl relative z-10 overflow-hidden flex flex-col max-h-[90vh]">
         
-        {/* Header */}
+
         <div className="bg-[#0A3F2F] p-6 text-white text-center relative shrink-0">
           <button 
             onClick={onClose}
@@ -44,13 +44,13 @@ export default function CheckoutModal({ isOpen, onClose, total, onConfirm }) {
         </div>
 
         <div className="p-6 overflow-y-auto">
-          {/* Total */}
+
           <div className="text-center mb-8">
             <span className="text-gray-400 text-xs font-bold uppercase tracking-wide">Amount Due</span>
             <div className="text-4xl font-bold text-[#0A3F2F] mt-2">${total}</div>
           </div>
 
-          {/* Toggle */}
+
           <div className="flex bg-gray-100 p-1 rounded-xl mb-6">
             <button 
               onClick={() => setMethod('card')}
@@ -70,7 +70,7 @@ export default function CheckoutModal({ isOpen, onClose, total, onConfirm }) {
             </button>
           </div>
 
-          {/* Form Content */}
+
           {method === 'card' ? (
             <div className="space-y-4 animate-in slide-in-from-right-2 duration-300">
               <div>
@@ -105,7 +105,7 @@ export default function CheckoutModal({ isOpen, onClose, total, onConfirm }) {
             </div>
           )}
 
-          {/* Action Button */}
+
           <button 
             onClick={handlePayment}
             disabled={processing}

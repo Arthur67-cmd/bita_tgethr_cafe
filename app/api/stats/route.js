@@ -11,13 +11,13 @@ export async function GET() {
 
     const promisePool = mysqlPool.promise();
 
-    // Total sales
+
     const [salesResult] = await promisePool.query(
       `SELECT SUM(total) as total_sales, COUNT(*) as order_count 
        FROM orders WHERE status IN ('Ready', 'Completed')`
     );
 
-    // Popular items
+
     const [popularItems] = await promisePool.query(
       `SELECT mi.name, SUM(oi.quantity) as sold
        FROM order_items oi

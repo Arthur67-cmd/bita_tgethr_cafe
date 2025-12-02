@@ -12,7 +12,7 @@ export default function CoffeeBarPage() {
 
   useEffect(() => {
     fetchData();
-    // Real-time updates every 2 seconds
+
     const interval = setInterval(fetchData, 2000);
     return () => clearInterval(interval);
   }, []);
@@ -85,13 +85,13 @@ export default function CoffeeBarPage() {
 
   return (
     <div className="min-h-screen" style={{ background: '#1A1A1A', color: 'white' }}>
-      {/* Header */}
+
       <header className="sticky top-0 z-50" style={{
         background: 'linear-gradient(135deg, #00C853 0%, #00A344 100%)',
         boxShadow: '0 4px 20px rgba(0, 200, 83, 0.3)'
       }}>
-        <div className="max-w-full mx-auto px-6 py-6"> {/* increased vertical padding */}
-          <div className="flex justify-between items-center gap-6"> {/* added gap between header items */}
+        <div className="max-w-full mx-auto px-6 py-6">
+          <div className="flex justify-between items-center gap-6">
             <div>
               <h1 className="text-3xl font-bold flex items-center gap-3">
                 <img
@@ -107,7 +107,7 @@ export default function CoffeeBarPage() {
                   }}
                 /> Coffee Bar Display
               </h1>
-              <p className="text-sm opacity-90 mt-1">Order Management • </p> {/* small top margin */}
+              <p className="text-sm opacity-90 mt-1">Order Management • </p>
             </div>
             <div className="flex gap-4 items-center">
               <div className="px-6 py-3 rounded-xl" style={{
@@ -143,11 +143,10 @@ export default function CoffeeBarPage() {
         </div>
       </header>
 
-      <div className="p-6 space-y-8"> {/* main content spacing between major parts */}
-        {/* Orders Board */}
+      <div className="p-6 space-y-8">
         <section className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            {/* New Orders */}
+
             <div className="flex flex-col">
               <div className="p-4 rounded-t-2xl font-bold text-lg flex justify-between items-center" style={{
                 background: 'linear-gradient(135deg, #FF3D00 0%, #DD2C00 100%)'
@@ -157,7 +156,7 @@ export default function CoffeeBarPage() {
                   {newOrders.length}
                 </span>
               </div>
-              <div className="space-y-4 mt-4 p-4"> {/* padding added around list */}
+              <div className="space-y-4 mt-4 p-4">
                 {newOrders.map(order => (
                   <div key={order.id} className="card animate-fade-in p-4 mb-4 rounded-xl" style={{
                     background: '#2A2A2A',
@@ -202,7 +201,7 @@ export default function CoffeeBarPage() {
               </div>
             </div>
 
-            {/* In Progress */}
+
             <div className="flex flex-col">
               <div className="p-4 rounded-t-2xl font-bold text-lg flex justify-between items-center" style={{
                 background: 'linear-gradient(135deg, #FF9100 0%, #FF6F00 100%)'
@@ -257,7 +256,7 @@ export default function CoffeeBarPage() {
               </div>
             </div>
 
-            {/* Ready */}
+
             <div className="flex flex-col">
               <div className="p-4 rounded-t-2xl font-bold text-lg flex justify-between items-center" style={{
                 background: 'linear-gradient(135deg, #00C853 0%, #00A344 100%)'
@@ -321,14 +320,14 @@ export default function CoffeeBarPage() {
           </div>
         </section>
 
-        {/* Menu Availability */}
+
         <section>
           <div className="card p-6 rounded-2xl" style={{ background: '#2A2A2A' }}>
             <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
               <span>🍽️</span>
               Menu Item Availability
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6"> {/* increased gap */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {menuItems.map(item => (
                 <button
                   key={item.id}

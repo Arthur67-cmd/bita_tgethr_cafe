@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { mysqlPool } from '@/utils/db';
 import { auth } from '@/auth';
 
-// GET single menu item
+
 export async function GET(request, { params }) {
   try {
     const { id } = await params;
@@ -22,7 +22,7 @@ export async function GET(request, { params }) {
   }
 }
 
-// PUT update menu item (owner only)
+
 export async function PUT(request, { params }) {
   try {
     const session = await auth();
@@ -52,7 +52,7 @@ export async function PUT(request, { params }) {
   }
 }
 
-// DELETE menu item (owner only)
+
 export async function DELETE(request, { params }) {
   try {
     const session = await auth();

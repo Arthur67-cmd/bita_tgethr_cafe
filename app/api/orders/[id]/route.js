@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { mysqlPool } from '@/utils/db';
 import { auth } from '@/auth';
 
-// PUT update order status (staff/owner only)
+
 export async function PUT(request, { params }) {
   try {
     const session = await auth();

@@ -10,8 +10,7 @@ export default function OwnerDashboard() {
   const [menuItems, setMenuItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // New states for add/edit form
-  const [formMode, setFormMode] = useState(null); // 'add' | 'edit' | null
+  const [formMode, setFormMode] = useState(null);
   const [editingItem, setEditingItem] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
@@ -36,7 +35,7 @@ export default function OwnerDashboard() {
     }
 
     fetchData();
-    // Auto-refresh every 10 seconds
+
     const interval = setInterval(fetchData, 10000);
     return () => clearInterval(interval);
   }, [session, status, router]);
@@ -64,7 +63,6 @@ export default function OwnerDashboard() {
     }
   }
 
-  // ---------- CRUD helpers for Menu ----------
 
   function openAddForm() {
     setFormMode("add");
@@ -196,7 +194,7 @@ export default function OwnerDashboard() {
 
   return (
     <div className="min-h-screen" style={{ background: "var(--bg-main)" }}>
-      {/* Header */}
+
       <header
         className="sticky top-0 z-50 glass"
         style={{
@@ -274,7 +272,7 @@ export default function OwnerDashboard() {
       </header>
 
       <div className="max-w-7xl mx-auto px-6 py-8">
-        {/* Stats Cards */}
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div
             className="card card-hover animate-fade-in"
@@ -359,7 +357,7 @@ export default function OwnerDashboard() {
           </div>
         </div>
 
-        {/* Popular Items */}
+
         <div className="card mb-8 animate-fade-in">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold flex items-center gap-2">
@@ -428,7 +426,7 @@ export default function OwnerDashboard() {
                     </div>
                   </div>
 
-                  {/* Progress Bar */}
+
                   <div className="mt-3">
                     <div
                       className="h-2 rounded-full"
@@ -466,7 +464,7 @@ export default function OwnerDashboard() {
           )}
         </div>
 
-        {/* Menu Management */}
+
         <div className="card animate-fade-in">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold flex items-center gap-2">
@@ -481,7 +479,7 @@ export default function OwnerDashboard() {
             </div>
           </div>
 
-          {/* Add/Edit Form */}
+
           {formMode && (
             <div
               className="mb-6 p-4 rounded-xl"
@@ -585,7 +583,7 @@ export default function OwnerDashboard() {
             </div>
           )}
 
-          {/* Menu Table */}
+
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>

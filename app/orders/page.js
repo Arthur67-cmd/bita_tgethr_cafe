@@ -11,7 +11,7 @@ export default function OrdersPage() {
 
   useEffect(() => {
     fetchOrders();
-    // Real-time updates every 3 seconds
+
     const interval = setInterval(fetchOrders, 3000);
     return () => clearInterval(interval);
   }, []);
@@ -48,7 +48,7 @@ export default function OrdersPage() {
 
   return (
     <div className="min-h-screen" style={{ background: 'var(--bg-main)' }}>
-      {/* Header */}
+
       <header className="glass sticky top-0 z-50" style={{ 
         borderBottom: '1px solid var(--border)'
       }}>
@@ -155,7 +155,7 @@ export default function OrdersPage() {
                     </div>
                   </div>
 
-                  {/* Order Items */}
+
                   <div className="p-4 rounded-xl mb-4" style={{ 
                     background: 'var(--bg-main)'
                   }}>
@@ -180,7 +180,7 @@ export default function OrdersPage() {
                     </div>
                   </div>
 
-                  {/* Status Message */}
+
                   {order.status === 'Ready' && (
                     <div className="p-4 rounded-xl animate-pulse" style={{ 
                       background: 'linear-gradient(135deg, rgba(0, 200, 83, 0.1) 0%, rgba(0, 163, 68, 0.1) 100%)',
@@ -200,7 +200,7 @@ export default function OrdersPage() {
                     </div>
                   )}
 
-                  {/* Progress Bar */}
+
                   <div className="mt-4">
                     <div className="flex justify-between mb-2 text-xs font-semibold">
                       {['New', 'In Progress', 'Ready'].map(step => (

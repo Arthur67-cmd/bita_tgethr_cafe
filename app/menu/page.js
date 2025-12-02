@@ -26,7 +26,7 @@ export default function AdvancedMenuPage() {
         }
         fetchMenu();
 
-        // Auto-refresh menu every 30 seconds
+
         const interval = setInterval(fetchMenu, 30000);
         return () => clearInterval(interval);
     }, [session]);
@@ -145,7 +145,7 @@ export default function AdvancedMenuPage() {
 
     return (
         <div className="min-h-screen py-8" style={{ background: 'var(--bg-main)' }}>
-            {/* Toast Notification */}
+
             {showToast && (
                 <div className="toast toast-success animate-slide-in">
                     <span style={{ fontSize: '1.25rem', marginRight: '0.5rem' }}>✓</span>
@@ -153,7 +153,7 @@ export default function AdvancedMenuPage() {
                 </div>
             )}
 
-            {/* Header */}
+
             <header
                 className="sticky top-0 z-50 glass"
                 style={{
@@ -258,7 +258,7 @@ export default function AdvancedMenuPage() {
                                         Logout
                                     </button>
 
-                                    {/* User Avatar */}
+
                                     <div
                                         className="w-10 h-10 rounded-full flex items-center justify-center font-bold"
                                         style={{
@@ -281,7 +281,7 @@ export default function AdvancedMenuPage() {
                         </div>
                     </div>
 
-                    {/* Search Bar */}
+
                     <div className="search-container" style={{ paddingTop: 6 }}>
                         <span className="search-icon">🔍</span>
                         <input
@@ -297,9 +297,9 @@ export default function AdvancedMenuPage() {
 
             <div className="max-w-7xl mx-auto px-8 py-8">
                 <div className="grid lg:grid-cols-3 gap-8">
-                    {/* Menu Section */}
+
                     <div className="lg:col-span-2">
-                        {/* Categories */}
+
                         <div className="flex gap-4 mb-8 overflow-x-auto pb-2">
                             {categories.map(category => (
                                 <button
@@ -320,7 +320,7 @@ export default function AdvancedMenuPage() {
                             ))}
                         </div>
 
-                        {/* Products Grid */}
+
                         {filteredItems.length === 0 ? (
                             <div className="card text-center py-12" style={{ padding: '28px' }}>
                                 <div className="text-6xl mb-4">🔍</div>
@@ -368,13 +368,13 @@ export default function AdvancedMenuPage() {
                                                 </div>
                                             )}
 
-                                            {/* Photo-fill image block with just price centered */}
+
                                             <div
                                                 className="photo-fill"
                                                 style={{
                                                     width: '100%',
                                                     height: 0,
-                                                    paddingTop: '66%', // 3:2 aspect
+                                                    paddingTop: '66%',
                                                     backgroundImage: `url(${item.image_url})`,
                                                     backgroundSize: 'cover',
                                                     backgroundPosition: 'center',
@@ -386,7 +386,7 @@ export default function AdvancedMenuPage() {
                                                 onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')}
                                                 aria-label={item.name}
                                             >
-                                                {/* Soft dark gradient for contrast */}
+
                                                 <div
                                                     style={{
                                                         position: 'absolute',
@@ -396,7 +396,7 @@ export default function AdvancedMenuPage() {
                                                     }}
                                                 />
 
-                                                {/* Centered price only */}
+
                                                 <div
                                                     style={{
                                                         position: 'absolute',
@@ -425,7 +425,7 @@ export default function AdvancedMenuPage() {
                                                     </div>
                                                 </div>
 
-                                                {/* Invisible img for accessibility & preloading */}
+
                                                 <img
                                                     src={item.image_url}
                                                     alt={item.name}
@@ -434,7 +434,7 @@ export default function AdvancedMenuPage() {
                                                 />
                                             </div>
 
-                                            {/* Body: compact details + add button */}
+
                                             <div style={{ padding: '16px' }}>
                                                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
                                                     <div style={{ flex: 1 }}>
@@ -475,7 +475,7 @@ export default function AdvancedMenuPage() {
                         )}
                     </div>
 
-                    {/* Order Summary */}
+
                     <div>
                         <div className="card sticky top-24 animate-fade-in" style={{ padding: '18px' }}>
                             <div className="flex items-center justify-between mb-4">
@@ -493,7 +493,7 @@ export default function AdvancedMenuPage() {
                                 </span>
                             </div>
 
-                            {/* Order Type Tabs */}
+
                             <div className="flex gap-2 mb-6">
                                 <button
                                     onClick={() => setOrderType('Dine In')}
@@ -509,7 +509,7 @@ export default function AdvancedMenuPage() {
                                 </button>
                             </div>
 
-                            {/* Customer Name */}
+
                             <div className="input-group" style={{ marginBottom: 12 }}>
                                 <label className="input-label">Customer Name *</label>
                                 <input
@@ -522,7 +522,7 @@ export default function AdvancedMenuPage() {
                                 />
                             </div>
 
-                            {/* Order List */}
+
                             <div className="mb-4">
                                 <label className="input-label mb-3">
                                     Order Items ({cart.length})
@@ -565,7 +565,7 @@ export default function AdvancedMenuPage() {
                                             >
                                                 <div className="flex gap-3">
                                                     <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center">
-                                                        {/* Cart thumbnail image (resized) */}
+
                                                         <img
                                                             src={item.image_url}
                                                             alt={item.name}
@@ -585,7 +585,7 @@ export default function AdvancedMenuPage() {
                                                                 ${(item.price * item.quantity).toFixed(2)}
                                                             </span>
 
-                                                            {/* Quantity Controls */}
+
                                                             <div className="flex items-center gap-2">
                                                                 <button
                                                                     onClick={() => updateQuantity(item.cartId, -1)}
@@ -629,7 +629,7 @@ export default function AdvancedMenuPage() {
                                 )}
                             </div>
 
-                            {/* Payment Details */}
+
                             {cart.length > 0 && (
                                 <>
                                     <div

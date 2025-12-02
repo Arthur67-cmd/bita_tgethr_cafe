@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { mysqlPool } from '@/utils/db';
 import { auth } from '@/auth';
 
-// GET all menu items
+
 export async function GET() {
   try {
     const promisePool = mysqlPool.promise();
@@ -15,7 +15,7 @@ export async function GET() {
   }
 }
 
-// POST create menu item (owner only)
+
 export async function POST(request) {
   try {
     const session = await auth();
