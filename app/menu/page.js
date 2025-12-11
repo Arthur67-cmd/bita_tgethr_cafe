@@ -164,7 +164,7 @@ export default function AdvancedMenuPage() {
                     <div className="flex justify-between items-center mb-4">
 
                         <div className="flex items-center gap-4">
-                            <image
+                            <img
                                 src="/logo.png"
                                 alt="BITA_TGETHR logo"
                                 loading="lazy"
@@ -202,7 +202,7 @@ export default function AdvancedMenuPage() {
                             )}
 
                             <button onClick={() => router.push('/orders')} className="btn btn-primary">
-                                <image
+                                <img
                                     src="/logo.png"
                                     alt="BITA_TGETHR logo"
                                     loading="lazy"
@@ -221,7 +221,7 @@ export default function AdvancedMenuPage() {
                                 <>
                                     {session.user.role === 'owner' && (
                                         <button onClick={() => router.push('/owner')} className="btn btn-primary">
-                                            <image
+                                            <img
                                                 src="/logo.png"
                                                 alt="BITA_TGETHR logo"
                                                 loading="lazy"
@@ -237,7 +237,7 @@ export default function AdvancedMenuPage() {
                                     )}
                                     {['staff', 'owner'].includes(session.user.role) && (
                                         <button onClick={() => router.push('/coffee-bar')} className="btn btn-primary">
-                                            <image
+                                            <img
                                                 src="/logo.png"
                                                 alt="BITA_TGETHR logo"
                                                 loading="lazy"
@@ -426,7 +426,7 @@ export default function AdvancedMenuPage() {
                                                 </div>
 
 
-                                                <image
+                                                <img
                                                     src={item.image_url}
                                                     alt={item.name}
                                                     style={{ display: 'none' }}
@@ -566,7 +566,7 @@ export default function AdvancedMenuPage() {
                                                 <div className="flex gap-3">
                                                     <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center">
 
-                                                        <image
+                                                        <img
                                                             src={item.image_url}
                                                             alt={item.name}
                                                             style={{

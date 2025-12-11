@@ -205,7 +205,7 @@ export default function OwnerDashboard() {
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-3xl font-bold text-gradient flex items-center gap-3">
-                <image
+                <img
               src="/logo.png"
               alt="BITA_TGETHR logo"
               loading="lazy"
@@ -230,7 +230,7 @@ export default function OwnerDashboard() {
                 onClick={() => router.push("/coffee-bar")}
                 className="btn btn-secondary"
               >
-                <image
+                <img
               src="/logo.png"
               alt="BITA_TGETHR logo"
               loading="lazy"
@@ -247,7 +247,7 @@ export default function OwnerDashboard() {
                 onClick={() => router.push("/menu")}
                 className="btn btn-secondary"
               >
-                <image
+                <img
               src="/logo.png"
               alt="BITA_TGETHR logo"
               loading="lazy"
@@ -612,7 +612,7 @@ export default function OwnerDashboard() {
                     <td className="p-4">
                       <div className="flex items-center gap-3">
                         <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center">
-                          <image
+                          <img
                             src={item.image_url}
                             alt={item.name}
                             style={{

@@ -73,7 +73,7 @@ export default function RegisterPage() {
 
         <div className="text-center mb-8">
           <div className="text-6xl mb-4">
-            <image
+            <img
               src="/logo.png"
               alt="BITA_TGETHR logo"
               loading="lazy"
