@@ -31,7 +31,7 @@ export default function LandingPage() {
           
           <div className={`flex-1 text-center md:text-left transition-all duration-1000 delay-300 ${loaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             <span className="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-[#34D399] text-xs tracking-widest mb-6 backdrop-blur-md">
-            <img
+            <image
               src="/logo.png"
               alt="BITA_TGETHR logo"
               loading="lazy"

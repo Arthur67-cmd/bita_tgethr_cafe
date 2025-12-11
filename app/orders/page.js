@@ -56,7 +56,7 @@ export default function OrdersPage() {
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-2xl font-bold text-gradient flex items-center gap-2">
-                <img
+                <image
                   src="/logo.png"
                   alt="BITA_TGETHR logo"
                   loading="lazy"
@@ -80,7 +80,7 @@ export default function OrdersPage() {
                 </div>
               )}
               <button onClick={() => router.push('/menu')} className="btn btn-primary">
-                <img
+                <image
                   src="/logo.png"
                   alt="BITA_TGETHR logo"
                   loading="lazy"

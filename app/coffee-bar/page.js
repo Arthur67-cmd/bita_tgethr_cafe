@@ -94,7 +94,7 @@ export default function CoffeeBarPage() {
           <div className="flex justify-between items-center gap-6">
             <div>
               <h1 className="text-3xl font-bold flex items-center gap-3">
-                <img
+                <image
                   src="/logo.png"
                   alt="BITA_TGETHR logo"
                   loading="lazy"
@@ -119,7 +119,7 @@ export default function CoffeeBarPage() {
               </div>
               {session?.user?.role === 'owner' && (
                 <button onClick={() => router.push('/owner')} className="btn btn-sensory px-4 py-3 flex items-center gap-2">
-                                            <img
+                                            <image
                                                 src="/logo.png"
                                                 alt="BITA_TGETHR logo"
                                                 loading="lazy"
@@ -339,7 +339,7 @@ export default function CoffeeBarPage() {
                   }}
                 >
                   <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center mx-auto mb-3">
-                    <img
+                    <image
                       src={item.image_url}
                       alt={item.name}
                       style={{
