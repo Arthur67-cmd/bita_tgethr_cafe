@@ -22,4 +22,10 @@ const eslintConfig = [
   },
 ];
 
-export default eslintConfig;
+export default [
+  {
+    rules: {
+      'react/no-unescaped-entities': 'off'
+    }
+  }
+];

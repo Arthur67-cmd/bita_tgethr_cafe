@@ -129,7 +129,7 @@ function LoginForm() {
 
         <div className="mt-6 text-center">
           <p style={{ color: 'var(--text-secondary)' }}>
-            Don't have an account?{' '}
+            Don&apos;t have an account?{' '}
             <Link
               href="/register"
               className="font-bold text-gradient hover:underline"
