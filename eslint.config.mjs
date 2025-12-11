@@ -11,21 +11,13 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals"),
-  {
-    ignores: [
-      "node_modules/**",
-      ".next/**",
-      "out/**",
-      "build/**",
-      "next-env.d.ts",
-    ],
-  },
-];
-
-export default [
+  
   {
     rules: {
-      'react/no-unescaped-entities': 'off'
+      'react/no-unescaped-entities': 'off',
+      '@next/next/no-img-element': 'off'
     }
   }
 ];
+
+export default eslintConfig;
