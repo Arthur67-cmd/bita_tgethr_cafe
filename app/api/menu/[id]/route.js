@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { mysqlPool } from '@/utils/db';
+import { auth } from '@/auth';
 
 
 export async function GET(request, { params }) {
